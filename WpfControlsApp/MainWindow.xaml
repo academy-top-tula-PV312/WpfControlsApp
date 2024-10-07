@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfControlsApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel Width="300">
+    <StackPanel x:Name="stack" Width="300">
         <TextBox FontSize="24"
                  FlowDirection="RightToLeft"/>
         <Button Height="70"
@@ -16,12 +16,47 @@
                 FontFamily="Arial"
                 FontStyle="Italic"
                 FontWeight="Normal"
-                FontStretch="ExtraCondensed">
+                FontStretch="ExtraCondensed"
+                IsEnabled="False"
+                IsDefault="True"
+                >
             Click me 1
         </Button>
-        <Button Height="70">
-            Click me 2
-        </Button>
+
+        <Button x:Name="btn" 
+                Height="70"
+                Content="Click me"
+                FontSize="40"
+                IsCancel="True"
+                MouseEnter="btn_MouseEnter"
+                MouseLeave="btn_MouseLeave"/>
         
+        <RepeatButton x:Name="rptBtn"
+                      Content="Increment"
+                      Click="rptBtn_Click"
+                      FontSize="24"
+                      Delay="3000"
+                      Interval="2000"/>
+        <TextBlock x:Name="txtTablo"
+                   FontSize="24"/>
+
+        <CheckBox x:Name="checkCpp" 
+                  Content="C++"
+                  FontSize="24"
+                  IsChecked="True"
+                  IsThreeState="True"
+                  Checked="checkCpp_Checked"
+                  Unchecked="checkCpp_Unchecked"
+                  Indeterminate="checkCpp_Indeterminate"/>
+
+        <RadioButton GroupName="langs" Content="Ru" IsChecked="True"/>
+        <RadioButton GroupName="langs" Content="En" IsChecked="False"/>
+        <RadioButton GroupName="langs" Content="De" IsChecked="False"/>
+        
+        <RadioButton GroupName="city" Content="Moscow" IsChecked="True"/>
+        <RadioButton GroupName="city" Content="Kaluga" IsChecked="False"/>
+        
+
+
     </StackPanel>
 </Window>
